@@ -51,12 +51,13 @@
     "build": "react-scripts build",
     "dev": "concurrently --kill-others-on-fail \"npm run-script server\" \"npm run-script client\"",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm install && npm run-script build && npm run-script client"
+    "heroku-postbuild": "npm install && npm run-script build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
   "homepage": "https://ditwanprice.herokuapp.com",
+  "proxy": "http://localhost:3005",
   "browserslist": {
     "production": [
       ">0.2%",
