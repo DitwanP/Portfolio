@@ -4,6 +4,8 @@
   "private": true,
   "description": "Ditwan Price's portfolio.",
   "main": "index.js",
+  "homepage": "https://ditwanprice.herokuapp.com",
+  "proxy": "http://localhost:3005",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.32",
     "@fortawesome/free-brands-svg-icons": "^5.15.1",
@@ -47,18 +49,16 @@
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "server": "node server.js",
+    "start": "node server.js",
     "client": "react-scripts start",
     "build": "react-scripts build",
     "dev": "concurrently --kill-others-on-fail \"npm run-script server\" \"npm run-script client\"",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm install && npm run-script build && serve -s build"
+    "heroku-postbuild": "npm install && npm run-script build"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "homepage": "https://ditwanprice.herokuapp.com",
-  "proxy": "http://localhost:3005",
   "browserslist": {
     "production": [
       ">0.2%",
