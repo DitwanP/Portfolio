@@ -51,7 +51,7 @@
     "build": "react-scripts build",
     "dev": "concurrently --kill-others-on-fail \"npm run-script server\" \"npm run-script client\"",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm install && npm run-script build && npm run build"
+    "heroku-postbuild": "npm install && npm run-script build && npm run-script client"
   },
   "eslintConfig": {
     "extends": "react-app"
