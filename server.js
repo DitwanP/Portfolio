@@ -1,4 +1,4 @@
-const path = requier('path');
+const path = require('path');
 const cors = require('cors');
 const express = require('express');
 const router = express.Router();
