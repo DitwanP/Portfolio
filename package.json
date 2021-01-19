@@ -44,10 +44,10 @@
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
-    "start": "node server.js",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "server": "node server.js",
     "client": "react-scripts start",
+    "build": "react-scripts build",
+    "dev": "concurrently --kill-others-on-fail \"npm run-script server\" \"npm run-script client\"",
     "eject": "react-scripts eject",
     "heroku-postbuild": "npm install && npm run-script build"
   },
