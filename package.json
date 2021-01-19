@@ -36,6 +36,7 @@
     "react-spring": "^8.0.27",
     "react-tsparticles": "^1.18.5",
     "sendgrid": "^5.2.3",
+    "serve": "^11.3.2",
     "three": "^0.122.0",
     "typescript": "^2.9.2"
   },
@@ -51,7 +52,7 @@
     "build": "react-scripts build",
     "dev": "concurrently --kill-others-on-fail \"npm run-script server\" \"npm run-script client\"",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "npm install && npm run-script build && serve build"
+    "heroku-postbuild": "npm install && npm run-script build && serve -s build"
   },
   "eslintConfig": {
     "extends": "react-app"
