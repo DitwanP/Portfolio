@@ -1,0 +1,794 @@
+// FONTS 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+// COLORS
+$white:#f0f0f0;
+$white-dim:#bbbbbb;
+$white-dimmest:#afafae;
+$background: #0f1f2c;
+$background-dark:#081016;
+$shadow:#000000;
+$teal-accent:#58e6d7;
+$teal-accent-dim:#4bc3b7;
+$orange-accent:#d44729;
+$yellow-accent: #f4bc46;
+
+// SCREEN SIZES
+$desktop:1200px;
+$laptop:1024px;
+$tablet:960px;
+$smallish-tablet: 960px;
+$small-tablet:650px;
+$phone:480px;
+
+$particleSize: .5vmin;
+$animationDuration: 30s;
+$amount: 40;
+
+.animation-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @media screen and (max-width:$tablet) {
+        display: none;
+    }
+}
+
+.projects {
+    height: 100vh;
+    width: 97.5%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background: $background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /* align horizontal */
+    align-items: center;        /* align vertical */
+    z-index: -2;
+
+    .projects-content {
+        height: 100vh;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;    /* align horizontal */
+        align-items: center;        /* align vertical */
+        z-index: -1;
+        overflow: auto;
+
+        @media screen and (max-width:$tablet) {
+            width: 90%;
+            overflow-y: hidden;
+            padding-bottom: 0rem;
+            flex-direction: column;
+            justify-content: center;    /* align horizontal */
+            align-items: center;        /* align vertical */
+        }
+
+        @media screen and (max-width:$phone) {
+            width: 100%;
+            flex-direction: column;
+            justify-content: center;    /* align horizontal */
+            align-items: center;        /* align vertical */
+        }
+
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width:100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 4;
+
+            .modal-video {
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        .modal-main {
+            position:fixed;
+            background: none;
+            width: 50%;
+            height: 50%;
+            top:50%;
+            left:50%;
+            transform: translate(-50%,-50%);
+
+            @media screen and (max-width:$desktop) {
+                width: 80%;
+                height: 40%;
+            }
+
+            @media screen and (max-width:$phone) {
+                width: 90%;
+                height: 25%;
+            }
+
+            .modal-close-button {
+                color: $teal-accent;
+                background: none;
+                outline: none;
+                border: none;
+                font-family: 'Share Tech Mono', monospace;
+                font-size: clamp(15px, 2.5vw, 25px);
+                margin-top: 0.5rem;
+            }
+
+            .modal-close-button:hover {
+                cursor: pointer;
+                color: $white;
+            }
+        }
+        
+        .display-block {
+            display: block;
+        }
+        
+        .display-none {
+            display: none;
+        }
+
+        .project-list,
+        .project-list li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            height: 35%;
+        }
+
+        .project-list {
+            width: 100%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-radius: 0px;
+            overflow: hidden;
+
+            @media screen and (max-width:$tablet){
+                margin-top: 6rem;
+            }
+
+            @media screen and (max-width:$smallish-tablet) {
+                height: 100%;
+            }
+        }
+
+        .project-list li {
+            position: relative;
+            background-color: $background-dark;
+            padding: 15px;
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: row;
+            cursor: default;
+            overflow: hidden;
+
+            @media screen and (max-width:$smallish-tablet) {
+                flex-direction: column;
+            }
+        }
+
+        .project-list li:last-child {
+            margin-bottom: 0px;
+        }
+
+        .avatar {
+            width: 30%;
+            height: 100%;
+            border-radius: 0px;
+            cursor: pointer;
+
+            @media screen and (max-width:$smallish-tablet) {
+                display: none;
+            }
+
+            .video {
+                width: 100%;
+                height: 100%;
+                filter: brightness(90%);
+            }
+        }
+
+        .project1 {
+            height: 45%;
+
+            .project-details {
+                width: 70%;
+                height: 100%;
+                margin-left: 1.5rem;
+
+                .title {
+                    color: $teal-accent;
+                    font-family: 'Helvetica', sans-serif;
+                    font-size: clamp(16px, 1.8vw, 26px);
+
+                    span {
+                        font-family: 'Share Tech Mono', monospace;
+                        font-size: clamp(16px, 1.8vw, 26px);
+                        color: $orange-accent;
+                    }
+                }
+
+                .description {
+                    height: 50%;
+                    color: $white-dim;
+                    font-size: clamp(16px, 1.2vw, 70px);
+                    font-family: 'Helvetica', sans-serif;
+                    font-weight: lighter;
+                    margin-top: 0.5rem;
+
+                    @media screen and (max-width:$smallish-tablet) {
+                        height: 55%;
+                        font-size: clamp(15px, 2.5vw, 20px);
+                        font-weight: normal;
+                    }
+                }
+
+                .tech-used {
+                    width: 100%;
+                    height: 12%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    padding: 0;
+                    justify-content: right;
+                    margin-bottom: 0;
+
+                    li {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 0;
+                        margin-left: 1.5rem;
+                        margin-bottom: 0;
+                        background: none;
+
+                        h3{
+                            color: $teal-accent;
+                            font-family: 'Share Tech Mono', monospace;
+                            font-weight: lighter;
+                            font-size: clamp(16px, 1vw, 30px);
+
+                            @media screen and (max-width:$smallish-tablet) {
+                                font-size: clamp(13px, 1vw, 30px);
+                            }
+                        }
+                    }
+
+                    li:last-child {
+                        margin-right: 2.5rem;
+
+                        @media screen and (max-width:$smallish-tablet) {
+                            margin-right: 0.5rem;
+                        }
+                    }
+
+                    @media screen and (max-width:$smallish-tablet){
+                        height: 10%;
+
+                    }
+                }
+
+                .links {
+                    height: 15%;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                    flex-direction: row;
+                    padding: 0;
+
+                    button {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 0;
+                        margin-bottom: 0;
+                        background: none;
+                        border: none;
+                        outline: none;
+
+                        svg {
+                            color: $white;
+                            height: 2rem;
+                            width: 2rem;
+                            margin-right: 1rem;
+                            cursor: pointer;
+                        }
+
+                        svg:hover {
+                            color: $teal-accent;
+                        }
+
+                        a:focus, a:active {
+                            outline: none;
+                            border: none;
+                        }
+        
+                        h3 {
+                            color: $white;
+                            margin-right: 2rem;
+                            font-family: 'Helvetica', sans-serif;
+                            font-size: clamp(14px, 1.5vw, 80px);
+                            font-weight: lighter;
+                        }
+                    }
+
+                    li {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 0;
+                        margin-right: 1rem;
+                        margin-bottom: 0;
+                        background: none;
+
+                        svg {
+                            color: $yellow-accent;
+                            height: 2rem;
+                            width: 2rem;
+                            margin-right: 1rem;
+                            cursor: pointer;
+                        }
+
+                        svg:hover {
+                            color: $teal-accent;
+                        }
+
+                        a:focus, a:active {
+                            outline: none;
+                            border: none;
+                        }
+        
+                        h3 {
+                            color: $white;
+                            margin-right: 2rem;
+                            font-family: 'Helvetica', sans-serif;
+                            font-size: clamp(14px, 1.5vw, 80px);
+                            font-weight: lighter;
+                        }
+                    }
+
+                    @media screen and (min-width:$smallish-tablet){
+                        li:first-child {
+                            display: none;
+                        }
+                    }
+
+                    li:last-child {
+                        margin-left: 0;
+                    }
+                }
+
+                @media screen and (max-width:$smallish-tablet) {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 15px;
+                    width: 100%;
+                    margin-left: 0;
+
+                    li:first-child {
+                        display: flex;
+                    }
+
+                    .links {
+                        margin-top: 0.5rem;
+                    }
+
+                    .title {
+                        span {
+                            font-size: clamp(17px, 1.8vw, 26px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .project2 {
+            height: 45%;
+
+            .project-details {
+                width: 70%;
+                height: 100%;
+                margin-right: 1.5rem;
+
+                .title {
+                    color: $teal-accent;
+                    font-family: 'Helvetica', sans-serif;
+                    font-size: clamp(16px, 1.8vw, 26px);
+                    text-align: right;
+
+                    span {
+                        font-family: 'Share Tech Mono', monospace;
+                        font-size: clamp(16px, 1.8vw, 26px);
+                        color: $orange-accent;
+                    }
+                }
+
+                .description {
+                    height: 50%;
+                    color: $white-dim;
+                    font-size: clamp(16px, 1.2vw, 70px);
+                    font-family: 'Helvetica', sans-serif;
+                    font-weight: lighter;
+                    text-align: right;
+                    margin-top: 0.5rem;
+
+                    @media screen and (max-width:$smallish-tablet) {
+                        height: 55%;
+                        font-size: clamp(15px, 2.5vw, 20px);
+                        font-weight: normal;
+                        text-align: left;
+                    }
+                }
+
+                .tech-used {
+                    width: 100%;
+                    height: 12%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    padding: 0;
+                    justify-content: left;
+                    margin-bottom: 0;
+
+                    li {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 0;
+                        margin-left: 1.5rem;
+                        margin-bottom: 0;
+                        background: none;
+
+                        h3{
+                            color: $teal-accent;
+                            font-family: 'Share Tech Mono', monospace;
+                            font-weight: lighter;
+                            font-size: clamp(16px, 1vw, 30px);
+
+                            @media screen and (max-width:$smallish-tablet) {
+                                font-size: clamp(13px, 1vw, 30px);
+                            }
+                        }
+
+                        @media screen and (max-width:$smallish-tablet) {
+                            margin-left: 0.5rem;
+                        }
+                    }
+
+                    li:last-child {
+                        margin-right: 2.5rem;
+
+                        @media screen and (max-width:$smallish-tablet) {
+                            margin-right: 0.5rem;
+                        }
+                    }
+
+                    @media screen and (max-width:$smallish-tablet){
+                        height: 10%;
+                        justify-content: right;
+                    }
+                }
+
+                .links {
+                    height: 15%;
+                    display: flex;
+                    justify-content: right;
+                    align-items: center;
+                    flex-direction: row;
+                    padding: 0;
+
+                    button {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 0;
+                        margin-bottom: 0;
+                        background: none;
+                        border: none;
+                        outline: none;
+
+                        svg {
+                            color: $white;
+                            height: 2rem;
+                            width: 2rem;
+                            margin-right: 1rem;
+                            cursor: pointer;
+                        }
+
+                        svg:hover {
+                            color: $teal-accent;
+                        }
+
+                        a:focus, a:active {
+                            outline: none;
+                            border: none;
+                        }
+        
+                        h3 {
+                            color: $white;
+                            margin-right: 2rem;
+                            font-family: 'Helvetica', sans-serif;
+                            font-size: clamp(14px, 1.5vw, 80px);
+                            font-weight: lighter;
+                        }
+                    }
+
+                    li {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 0;
+                        margin-right: 1rem;
+                        margin-bottom: 0;
+                        background: none;
+
+                        svg {
+                            color: $yellow-accent;
+                            height: 2rem;
+                            width: 2rem;
+                            margin-right: 1rem;
+                            cursor: pointer;
+                        }
+
+                        svg:hover {
+                            color: $teal-accent;
+                        }
+
+                        a:focus, a:active {
+                            outline: none;
+                            border: none;
+                        }
+        
+                        h3 {
+                            color: $white;
+                            margin-right: 2rem;
+                            font-family: 'Helvetica', sans-serif;
+                            font-size: clamp(14px, 1.5vw, 80px);
+                            font-weight: lighter;
+                        }
+                    }
+
+                    li:last-child {
+                        margin-right: 0;
+                    }
+
+                    @media screen and (min-width:$smallish-tablet){
+                        li:first-child {
+                            display: none;
+                        }
+                    }
+                }
+
+                @media screen and (max-width:$smallish-tablet) {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 15px;
+                    width: 100%;
+                    margin-left: 0;
+
+                    li:first-child {
+                        display: flex;
+                    }
+
+                    .links {
+                        margin-top: 0.5rem;
+                        justify-content: left;
+                    }
+
+                    .title {
+                        text-align: left;
+
+                        span {
+                            font-size: clamp(17px, 1.8vw, 26px);
+                        }
+                    }
+                }
+            }
+        }
+
+        .project3 {
+            height: 45%;
+
+            .project-details {
+                width: 70%;
+                height: 100%;
+                margin-left: 1.5rem;
+
+                .title {
+                    color: $teal-accent;
+                    font-family: 'Helvetica', sans-serif;
+                    font-size: clamp(16px, 1.8vw, 26px);
+
+                    span {
+                        font-family: 'Share Tech Mono', monospace;
+                        font-size: clamp(16px, 1.8vw, 26px);
+                        color: $orange-accent;
+                    }
+                }
+
+                .description {
+                    height: 50%;
+                    color: $white-dim;
+                    font-size: clamp(16px, 1.2vw, 70px);
+                    font-family: 'Helvetica', sans-serif;
+                    font-weight: lighter;
+                    margin-top: 0.5rem;
+
+                    @media screen and (max-width:$smallish-tablet) {
+                        height: 55%;
+                        font-size: clamp(15px, 2.7vw, 20px);
+                        font-weight: normal;
+                    }
+                }
+
+                .tech-used {
+                    width: 100%;
+                    height: 12%;
+                    display: flex;
+                    flex-wrap: wrap;
+                    flex-direction: row;
+                    padding: 0;
+                    justify-content: right;
+                    margin-bottom: 0;
+
+                    li {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 0;
+                        margin-left: 1.5rem;
+                        margin-bottom: 0;
+                        background: none;
+
+                        h3{
+                            color: $teal-accent;
+                            font-family: 'Share Tech Mono', monospace;
+                            font-weight: lighter;
+                            font-size: clamp(16px, 1vw, 30px);
+
+                            @media screen and (max-width:$smallish-tablet) {
+                                font-size: clamp(13px, 1vw, 30px);
+                            }
+                        }
+                    }
+
+                    li:last-child {
+                        margin-right: 2.5rem;
+
+                        @media screen and (max-width:$smallish-tablet) {
+                            margin-right: 0.5rem;
+                        }
+                    }
+
+                    @media screen and (max-width:$smallish-tablet){
+                        height: 10%;
+                    }
+                }
+
+                .links {
+                    height: 15%;
+                    display: flex;
+                    justify-content: left;
+                    align-items: center;
+                    flex-direction: row;
+                    padding: 0;
+
+                    button {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 0;
+                        margin-bottom: 0;
+                        background: none;
+                        border: none;
+                        outline: none;
+
+                        svg {
+                            color: $white;
+                            height: 2rem;
+                            width: 2rem;
+                            margin-right: 1rem;
+                            cursor: pointer;
+                        }
+
+                        svg:hover {
+                            color: $teal-accent;
+                        }
+
+                        a:focus, a:active {
+                            outline: none;
+                            border: none;
+                        }
+        
+                        h3 {
+                            color: $white;
+                            margin-right: 2rem;
+                            font-family: 'Helvetica', sans-serif;
+                            font-size: clamp(14px, 1.5vw, 80px);
+                            font-weight: lighter;
+                        }
+                    }
+
+                    li {
+                        height: 100%;
+                        display: flex;
+                        flex-direction: row;
+                        padding: 0;
+                        margin-right: 1rem;
+                        margin-bottom: 0;
+                        background: none;
+
+                        svg {
+                            color: $yellow-accent;
+                            height: 2rem;
+                            width: 2rem;
+                            margin-right: 1rem;
+                            cursor: pointer;
+                        }
+
+                        svg:hover {
+                            color: $teal-accent;
+                        }
+
+                        a:focus, a:active {
+                            outline: none;
+                            border: none;
+                        }
+        
+                        h3 {
+                            color: $white;
+                            margin-right: 2rem;
+                            font-family: 'Helvetica', sans-serif;
+                            font-size: clamp(14px, 1.5vw, 80px);
+                            font-weight: lighter;
+                        }
+                    }
+
+                    @media screen and (min-width:$smallish-tablet){
+                        li:first-child {
+                            display: none;
+                        }
+                    }
+
+                    li:last-child {
+                        margin-left: 0;
+                    }
+                }
+
+                @media screen and (max-width:$smallish-tablet) {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    padding: 15px;
+                    width: 100%;
+                    margin-left: 0;
+
+                    .links {
+                        margin-top: 0.5rem;
+                    }
+
+                    .title {
+                        span {
+                            font-size: clamp(17px, 1.8vw, 26px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:$tablet) {
+        width: 100%;
+    }
+}

@@ -1,0 +1,257 @@
+// FONTS 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+// COLORS
+$white:#f0f0f0;
+$white-dim:#bbbbbb;
+$white-dimmest:#afafae;
+$background: #0f1f2c;
+$background-dark:#081016;
+$shadow:#000000;
+$teal-accent:#58e6d7;
+$teal-accent-dim:#4bc3b7;
+$orange-accent:#d44729;
+$yellow-accent: #f4bc46;
+
+// SCREEN SIZES
+$desktop:1200px;
+$laptop:1024px;
+$tablet:960px;
+$small-tablet:650px;
+$phone:480px;
+
+$particleSize: .5vmin;
+$animationDuration: 30s;
+$amount: 50;
+
+.animation-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @media screen and (max-width:$tablet) {
+        display: none;
+    }
+}
+
+.contact-me {
+    height: 100vh;
+    width: 97.5%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background: $background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /* align horizontal */
+    align-items: center;        /* align vertical */
+    z-index: -2;
+    overflow: hidden;
+
+
+    .contact-me-content {
+        height: 100vh;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;    /* align horizontal */
+        align-items: center;        /* align vertical */
+        z-index: -1;
+
+        @media screen and (max-width:$tablet) {
+            width: 85%;
+            padding-bottom: 0rem;
+            flex-direction: column;
+            justify-content: center;    /* align horizontal */
+            align-items: center;        /* align vertical */
+        }
+
+        @media screen and (max-width:$phone) {
+            width: 90%;
+            flex-direction: column;
+            justify-content: center;    /* align horizontal */
+            align-items: center;        /* align vertical */
+        }
+
+
+        #contact-form {
+            color: $white;
+            width: 80%;
+            height: 70%;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+
+            label {
+                color: $teal-accent;
+                font-family: 'Share Tech Mono', monospace;
+                font-size: 2.2rem;
+                letter-spacing: 3px;
+            }
+
+            label::after {
+                content: ":";
+            }
+
+            .name-input {
+                width: 100%;
+
+                input {
+                    width: 100%;
+                    height: 4rem;
+                    margin-top: 1rem;
+                    padding-left: 1rem;
+                    background-color: $background-dark;
+                    color: $white;
+                    font-size: 1.8rem;
+                    font-family: Arial, sans-serif;
+                    border: none;
+                }
+
+                input:hover{
+                    cursor: auto;
+                }
+
+                input:focus {
+                    outline: none !important;
+                    border:1px solid $yellow-accent;
+                    box-shadow: 0 0 10px $yellow-accent;
+                }
+            }
+
+            .email-input {
+                width: 100%;
+                margin-top: 2rem;
+
+                input {
+                    width: 100%;
+                    height: 4rem;
+                    margin-top: 1rem;
+                    padding-left: 1rem;
+                    background-color: $background-dark;
+                    color: $white;
+                    font-size: 1.8rem;
+                    font-family: Arial, sans-serif;
+                    border: none;
+                }
+
+                input:hover{
+                    cursor: auto;
+                }
+
+                input:focus {
+                    outline: none !important;
+                    border:1px solid $yellow-accent;
+                    box-shadow: 0 0 10px $yellow-accent;
+                }
+            }
+
+            .message-input {
+                width: 100%;
+                margin-top: 2rem;
+
+                textarea {
+                    width: 100%;
+                    height: 16rem;
+                    margin-top: 1rem;
+                    padding: 1rem;
+                    background-color: $background-dark;
+                    color: $white;
+                    font-size: 1.8rem;
+                    font-family: Arial, sans-serif;
+                    border: none;
+                }
+
+                textarea:hover{
+                    cursor: auto;
+                }
+
+                textarea:focus {
+                    outline: none !important;
+                    border:1px solid $yellow-accent;
+                    box-shadow: 0 0 10px $yellow-accent;
+                }
+            }
+
+            .send-email-btn {
+                background: none;
+                border: none;
+                outline: none;
+                margin-top: 2rem;
+
+                .icon {
+                    color: $orange-accent;
+                    height: 3rem;
+                    width: 3rem;
+                }
+
+                .icon:hover {
+                    color: $teal-accent;
+                    cursor: pointer;
+                    scale: 1.2;
+                }
+
+                .sending-message {
+                    font-size: 16px;
+                    font-family: 'Share Tech Mono', monospace;
+                    color: $yellow-accent;
+                }
+            }
+
+            .alert-container {
+                width: 20%;
+                height: 15%;
+                background-color: $background-dark;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                outline: 2px $teal-accent;
+
+                h1 {
+                    color: $white;
+                    font-family: 'Share Tech Mono', monospace;
+                    font-size: 1.8rem;
+                }
+            }
+
+            @media screen and (max-width:$tablet) {
+                width: 100%;
+
+                label {
+                    font-size: clamp(18px, 2.2vw, 42px);
+                }
+
+                .name-input {
+                    input {
+                        height: 5rem;
+                        font-size: 1.6rem;
+                    }
+                }
+
+                .email-input {
+                    input {
+                        height: 5rem;
+                        font-size: 1.6rem;
+                    }
+                }
+
+                .message-input {
+                    textarea {
+                        height: 18rem;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (max-width:$tablet) {
+        width: 100%;
+    }
+}

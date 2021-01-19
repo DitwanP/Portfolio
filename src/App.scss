@@ -1,0 +1,273 @@
+// COLORS
+$white:#e4edf1;
+$white-dim:#c3cccf;
+$white-dimmest:#a1a9ac;
+$background: #0f1f2c;
+$background-dark:#0b151d;
+$shadow:#000000;
+$teal-accent:#58e6d7;
+$teal-accent-slight-dim:#4dc7bb;
+$teal-accent-dim:#3b9b91;
+$orange-accent:#d44729;
+$yellow-accent: #f4bc46;
+
+// SCREEN SIZES
+$desktop:1200px;
+$laptop:1024px;
+$tablet:960px;
+$small-tablet:650px;
+$phone:480px;
+
+html{
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-rendering: optimizeLegibility;
+}
+
+body {
+    background-color: $teal-accent-dim;
+    overflow: hidden;
+}
+
+.sidenav-container {
+    min-width: 2.5%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    z-index: 0;
+    min-height: 500px;
+    background-color: $background-dark;
+
+    @media screen and (max-width:$tablet) {
+        flex-direction: row;
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 3;
+        min-height: 0;
+    }
+}
+
+.logo {
+    color: $white;
+    display: block;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+
+    svg:hover {
+        scale: 1.1;
+        fill: $background;
+    }
+
+    a:focus, a:active, svg:focus, svg:active {
+        outline: none;
+        border: none;
+    }
+
+    @media screen and (max-width:$tablet) {
+        margin-left: 1rem;
+        margin-top: 0.8rem;
+    }
+
+
+}
+
+.nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    #ham-nav-label, #ham-nav {
+        display: none;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none; 
+    }
+
+    span {
+        font-family: 'Roboto Mono', monospace;
+        width: 8rem;
+        float: left;
+        position: absolute;
+        right: -160%;
+        top: -10%;
+        color: $teal-accent;
+        font-size: clamp(1rem, 0.8vw, 2rem);
+        text-align: left;
+        text-transform: uppercase;
+        display: none;
+    }
+
+    a, .nav-links {
+        font-size: 1.9rem;
+        color: $white;
+        display: block;
+        line-height: 5.1rem;
+        height: 5.1rem;
+        position: relative;
+        text-decoration: none;
+        padding: 0;
+        margin: 1.5rem 0rem;
+
+        .active {
+            color: $teal-accent;
+        }
+
+        @media screen and (max-width:$tablet) {
+            float: left;
+            margin: 0% 6%;
+            line-height: 6rem;
+            height: 6rem;
+        }
+    }
+
+    a:hover, .nav-links:hover {
+        scale: 1.2;
+        color: $teal-accent;
+        cursor: pointer;
+
+        span {
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin-left: 4rem;
+            animation: fadeIn;
+            animation-duration: 1s;
+        }
+    }
+
+    a:active, a:focus, .nav-links:hover, .nav-links:focus {
+        outline: none;
+        border: none;
+    }
+
+    .active-link {
+        color: $teal-accent;
+    }
+
+    @media screen and (max-width:$tablet) {
+        width: 100%;
+        height: 60px;
+        position: absolute;
+        left: 0%;
+        top: 0%;
+        justify-content: flex-end;
+
+        #ham-nav-label {
+            margin-right: 1rem;
+            display: inline-block; 
+            height: 100%;
+            color: $white;
+            font-style: normal;
+            font-size: 3.5rem;
+            line-height: 4.2rem;
+        }
+
+        span {
+            display: none;
+        }
+
+        .ham-nav-items {
+            background: rgba($color: $teal-accent-slight-dim, $alpha: 1);
+            display: none;
+            height: 100%;
+            width: 100%;
+            border-top: 1px $white;
+        }
+
+        #ham-nav:checked ~ .ham-nav-items { 
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 100%;
+            z-index: 3;
+            animation: fadeIn .5s;
+            overflow: hidden;
+
+            a {
+                width: 25%;
+                font-size: 2rem;
+                color: $background;
+                text-decoration: none;
+                margin: 0;
+            }
+
+            .active-link {
+                background-color: rgba(0, 0, 0, 0.137);
+            }
+        }
+
+        a:hover, .nav-links:hover {
+            span {
+                display: none;
+            }
+        }
+    }
+}
+
+.socials {
+    display: block;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    margin: 0rem;
+    padding-bottom: 2rem;
+
+    li a {
+        font-size: 1.4rem;
+        padding: 0.7rem 0rem;
+        line-height: 1.6rem;
+        color: $yellow-accent;
+        display: block;
+    }
+
+    li a:hover {
+        color: $teal-accent;
+        cursor: pointer;
+    }
+
+    li a:active {
+        outline: none;
+    }
+
+    @media screen and (max-width:$tablet) {
+        display: none;
+    }
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from{
+        margin-right: -100rem;
+    }
+    to{
+        margin-right: 0rem;
+    }
+}

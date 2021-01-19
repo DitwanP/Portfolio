@@ -1,0 +1,7 @@
+# Environment
+/venv
+**/node_modules
+
+#secret
+config.js
+.env

@@ -1,0 +1,69 @@
+{
+  "name": "my-portfolio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.32",
+    "@fortawesome/free-brands-svg-icons": "^5.15.1",
+    "@fortawesome/free-solid-svg-icons": "^5.15.1",
+    "@fortawesome/react-fontawesome": "^0.1.11",
+    "@loadable/component": "^5.14.1",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "framer-motion": "^2.9.1",
+    "googleapis": "^67.0.0",
+    "lodash": "^4.17.20",
+    "marked": "^0.6.3",
+    "node-sass-chokidar": "^1.5.0",
+    "nodemailer": "^6.4.15",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "object-path": "^0.11.5",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-icons": "^3.11.0",
+    "react-lorem-ipsum": "^1.4.7",
+    "react-particles-js": "^3.3.0",
+    "react-particles-webgl": "^1.0.10",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.3",
+    "react-spring": "^8.0.27",
+    "react-tsparticles": "^1.18.5",
+    "sendgrid": "^5.2.3",
+    "three": "^0.122.0",
+    "typescript": "^2.9.2"
+  },
+  "engines": {
+    "node": "14.15.1",
+    "npm": "6.14.8"
+  },
+  "scripts": {
+    "build-css": "node-sass-chokidar src/ -o src/",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "server": "node server.js",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm install && npm run-script server && npm run-script build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

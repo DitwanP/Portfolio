@@ -1,0 +1,358 @@
+// FONTS 
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap');
+
+// COLORS
+$white:#f0f0f0;
+$white-dim:#bbbbbb;
+$white-dimmest:#afafae;
+$background: #0f1f2c;
+$background-dark:#081016;
+$shadow:#000000;
+$teal-accent:#58e6d7;
+$teal-accent-dim:#4bc3b7;
+$orange-accent:#d44729;
+$yellow-accent: #f4bc46;
+
+// SCREEN SIZES
+$desktop:1200px;
+$laptop:1024px;
+$tablet:960px;
+$small-tablet:750px;
+$phone:480px;
+
+// BRAND COLORS
+$python: #ffde57;
+$java: #0093f4;
+$javascript: #f7df1e;
+$html: #e34f26;
+$css:#28a9e0;
+$sass: #cf649a;
+$git: #4078c0;
+$npm: #cb3837;
+$react: #61dafb;
+$node: #50b34d;
+$bootstrap: #8553c5;
+$django: #1dac75;
+$postgres: #4d9bdb;
+
+// ROW WIDTH FOR SKILL SPAN
+$rowWidth: 30%;
+
+$particleSize: .5vmin;
+$animationDuration: 30s;
+$amount: 50;
+
+
+.animation-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    @media screen and (max-width:$tablet) {
+        display: none;
+    }
+}
+
+.skills {
+    height: 100vh;
+    width: 97.5%;
+    position: absolute;
+    top: 0%;
+    right: 0%;
+    background: $background;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;    /* align horizontal */
+    align-items: center;        /* align vertical */
+    z-index: -2;
+
+    .skills-content {
+        height: 100vh;
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;    /* align horizontal */
+        align-items: center;        /* align vertical */
+        z-index: -1;
+
+        @media screen and (max-width:$tablet) {
+            width: 85%;
+            overflow-y: auto;
+            padding-bottom: 0rem;
+            flex-direction: column;
+            justify-content: center;    /* align horizontal */
+            align-items: center;        /* align vertical */
+        }
+
+        @media screen and (max-width:$phone) {
+            margin-top: 10rem;
+            width: 90%;
+            flex-direction: column;
+            justify-content: center;    /* align horizontal */
+            align-items: center;        /* align vertical */
+        }
+    }
+
+    @media screen and (max-width:$tablet) {
+        width: 100%;
+        overflow: auto;
+        margin-top: 2rem;
+    }
+
+    @media screen and (max-width:$phone) {
+        margin-top: 0rem;
+    }
+}
+
+.summary {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .title {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 1rem;
+        cursor: default;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    
+        h2 {
+            height: inherit;
+            color: $teal-accent;
+            font-size: clamp(25px, 1.8vw, 70px);
+            font-family: 'Share Tech Mono' , monospace;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+    
+            @media (max-width:$tablet) {
+                font-size: clamp(20px, 2.3vw, 40px);
+            }
+    
+            @media (max-width:$phone) {
+                font-size: clamp(12px, 4.8vw, 20px);
+            }
+        }
+
+        span {
+            display: inline-block;
+        }
+    
+        span:hover {
+            color: $teal-accent;
+        }
+
+        .title-span.animated {
+            animation: shrinkjumpTitle 1s ease-in-out;
+            color: $orange-accent;
+        }
+    
+        @media (max-width:$tablet) {
+            margin-top: 6rem;
+        }
+    
+        @media (max-width:$phone) {
+            height: 2.5rem;
+            margin-top: 0.5rem;
+    
+            h1 {
+                font-size: clamp(16px, 1vw, 50px);
+            }
+        }
+    }
+
+    p {
+        color: $white;
+        font-size: clamp(14px, 1.2vw, 40px);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 300;
+        margin-bottom: 2rem;
+
+        @media (max-width:$tablet) {
+            font-size: clamp(16px, 2.4vw, 40px);
+        }
+
+        @media (max-width:$phone) {
+            font-size: clamp(12px, 3.8vw, 40px);
+        }
+    }
+
+    @media (max-width:$tablet) {
+        width: 95%;
+        height: 40%;
+    }
+
+    @media (max-width:$small-tablet) {
+        height: 70%;
+    }
+
+    @media screen and (max-width:$phone) {
+        width: 95%;
+        height: 50%;
+    }
+}
+
+.list-of-skills {
+    z-index: -1;
+    width: 70%;
+    height: 100%;
+    margin-left: 12rem;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;    /* align horizontal */
+    align-items: center;
+    cursor: default;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    .skill-list {
+        height: 50%;
+        width: 50%;
+        text-align: left;
+        color: $white;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .animated-logo {
+            animation: colorChangeSkills 1.5s ease-in-out;
+            color: $orange-accent;
+        }
+
+        .animated-name {
+            animation: shrinkjumpName 1.5s ease-in-out;
+            color: $yellow-accent;
+        }
+
+        .skill-logos {
+            width: 30px; 
+            height: 30px; 
+            margin-right: 1rem;
+            color: $orange-accent;
+            margin-bottom: 2rem;
+            margin-top: 0.2rem;
+
+            @media (max-width:$phone) {
+                width: 20px; 
+                height: 20px;
+            }
+        }
+
+        li {
+            display: flex;
+            flex-direction: row;
+        }
+
+        h3 {
+            font-size: clamp(16px, 1.5vw, 100px);
+            font-family: 'Poppins', sans-serif;
+            font-weight: lighter;
+            text-shadow: 1px 1px 2px black;
+            letter-spacing: 3px;
+            margin-bottom: 2rem;
+            margin-right: 2rem;
+
+            @media (max-width:$phone) {
+                font-size: clamp(14px, 2.2vw, 100px);
+            }
+        }
+
+        @media (max-width:$tablet) {
+            height: 80%;
+        }
+    }
+
+
+    @media (max-width:$tablet) {
+        width: 95%;
+        height: 50%;
+        margin-left: 0rem;
+        margin-top: 2rem;
+        align-items: unset;
+    }
+
+    @media (max-width:$small-tablet) {
+        margin-left: 0rem;
+    }
+
+}
+
+@-webkit-keyframes colorChangeSkills {
+    0% {scale: 1; 
+        transform: rotate(0deg);
+    }
+    50% {scale: 1.5; 
+        transform: rotate(-360deg);
+    }
+    100% {scale: 1; 
+        transform: rotate(0deg);
+    }
+}
+@-moz-keyframes colorChangeSkills {
+    0% {scale: 1; 
+        transform: rotate(0deg);
+    }
+    50% {scale: 1.5; 
+        transform: rotate(-360deg);
+    }
+    100% {scale: 1; 
+        transform: rotate(0deg);
+    }
+}
+@keyframes colorChangeSkills {
+    0% {scale: 1; 
+        transform: rotate(0deg);
+    }
+    50% {scale: 1.5; 
+        transform: rotate(-360deg);
+    }
+    100% {scale: 1; 
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes shrinkjumpTitle {
+	10%, 35% {
+		transform: scale(1.1, .9) translate(0, 0);
+	}
+	
+	45%, 50% {
+		transform: scale(1) translate(0, -30px);
+	}
+	
+	80% {
+		transform: scale(1) translate(0, 0);
+	}
+}
+
+@keyframes shrinkjumpName {
+	10%, 35% {
+		transform: scale(1.1, .9) translate(0, 0);
+	}
+	
+	45%, 50% {
+		transform: scale(1) translate(0, -30px);
+	}
+	
+	80% {
+		transform: scale(1) translate(0, 0);
+	}
+}
