@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { RiMailSendLine } from 'react-icons/ri';
 import ParticleField from 'react-particles-webgl';
 import axios from 'axios';
+import env from 'dotenv';
 
 const pageVariants = { 
     in:{ 
@@ -158,7 +159,7 @@ class ContactMe extends Component {
         else {
             axios({
                 method: "POST", 
-                url:"http://localhost:3175/send", 
+                url:`https://ditwanprice.herokuapp.com/send`, 
                 scope:"https://mail.google.com/",
                 data: this.state
             })
