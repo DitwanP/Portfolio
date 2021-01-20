@@ -158,6 +158,7 @@ $amount: 40;
 
             @media screen and (max-width:$smallish-tablet) {
                 height: 100%;
+                overflow-y: auto;
             }
         }
 

@@ -88,7 +88,7 @@ $amount: 50;
         }
 
         @media screen and (max-width:$phone) {
-            margin-top: 10rem;
+            margin-top: 11rem;
             width: 90%;
             flex-direction: column;
             justify-content: center;    /* align horizontal */
@@ -291,6 +291,7 @@ $amount: 50;
 
     @media (max-width:$small-tablet) {
         margin-left: 0rem;
+        margin-top: 0rem;
     }
 
 }
