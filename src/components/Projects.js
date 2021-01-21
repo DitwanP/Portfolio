@@ -10,16 +10,16 @@ import { motion } from "framer-motion";
 
 const pageVariants = { 
     in:{ 
-        scale: [0.95, 0.95, 0.95, 1],
-        x: ["100vw", "100vw", "0vw", "0vw"],
+        scale: [0.95, 0.95, 0.95, 0.95, 1],
+        x: ["100vw", "100vw", "100vw", "0vw", "0vw"],
     },
     notIn: {
         scale: 0.95,
         x: "100vw",
     },
     outDown: {
-        scale: [1, 0.95, 0.95],
-        y: [0, 0, 1000],
+        scale: [1, 0.95, 0.95, 0.95, 0.95],
+        y: [0, 0, 0, 0, 2000],
     }
 }
 
@@ -134,7 +134,6 @@ class Projects extends Component {
 
     showModal = (videoToPlay) => {
         this.setState({ show: true, video: videoToPlay });
-        console.log(this.state.show);
     };
 
     hideModal = () => {
@@ -184,7 +183,7 @@ class Projects extends Component {
                                     frameBorder='0'
                                     allowFullScreen
                                     title='Statify demo'
-                                    controls="true"
+                                    controls={true}
                                     type="video/mp4"
                                     className="video"/>
                                 </motion.div>
@@ -202,9 +201,9 @@ class Projects extends Component {
                                     variants={container}
                                     transition={{ ease: "easeIn", duration: 0.25, delay: 2.9 }}>
                                         I created this site in order for a user to see a simple and clean
-                                        breakdown of their spotify data. I utilized the Spotify API in order for users to 
-                                        login and authenticate externally with Spotify, and then their account data
-                                        is displayed to them.
+                                        presentation of their spotify data. I utilized the Spotify API in order 
+                                        for users to login and authenticate externally, and then their most important
+                                        account data is displayed to them.
                                     </motion.h3>
                                     <motion.ul className="tech-used"
                                     initial="start"
@@ -260,7 +259,7 @@ class Projects extends Component {
                                 variants={container}
                                 transition={{ ease: "easeIn", duration: 0.25, delay: 3.4 }}>
                                     The idea for this project was to make myself a home page for my 
-                                    browser. The page has weather information, a daily quote, and
+                                    browser. The page contains weather information, a daily quote, and
                                     a new daily background image, all pulled from different APIs. There
                                     is also a simple to-do list for keeping track of small tasks.
                                 </motion.h3>
@@ -306,7 +305,7 @@ class Projects extends Component {
                                 <video src={HomebaseVideo}
                                 frameBorder='0'
                                 allowFullScreen
-                                controls="true"
+                                controls={true}
                                 type="video/mp4"
                                 title='Homebase demo'
                                 className="video"/>
@@ -326,7 +325,7 @@ class Projects extends Component {
                                 frameBorder='0'
                                 allowFullScreen
                                 title='Bookstore demo'
-                                controls="true"
+                                controls={true}
                                 type="video/mp4"
                                 className="video"/>
                             </motion.div>
@@ -344,8 +343,9 @@ class Projects extends Component {
                                 variants={container}
                                 transition={{ ease: "easeIn", duration: 0.25, delay: 4 }}>
                                     This project was my first endeavor into the world of web development.
-                                    The goal was to create a convincing online bookstore with functionality 
-                                    full CRUD functionality in the shopping cart.
+                                    The goal was to make a convincing online bookstore with full CRUD 
+                                    functionality in the shopping cart. We used Django for the first time
+                                    and managed to create a solid project condsidering it was new to all members involved.
                                 </motion.h3>
                                 <motion.ul className="tech-used"
                                 initial="start"

@@ -3,6 +3,7 @@ import loadable from '@loadable/component'
 import { AnimatePresence, motion } from 'framer-motion';
 import { Route, Switch, NavLink, useLocation } from 'react-router-dom';
 import { faLinkedinIn, faGithub} from '@fortawesome/free-brands-svg-icons';
+import { BiMenuAltRight } from 'react-icons/bi';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import './App.scss';
 
@@ -24,15 +25,15 @@ function App() {
                     animate={{ y: 0, opacity: 1}}
                     transition={{ ease: "easeOut", duration: 0.25, delay: 1.5}}>
                         <svg width="40" height="44" viewBox="0 0 391 404" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M195.5 13L364.808 107.5V296.5L195.5 391L26.192 296.5V107.5L195.5 13Z" stroke="#D44729" stroke-width="22"/>
+                            <path d="M195.5 13L364.808 107.5V296.5L195.5 391L26.192 296.5V107.5L195.5 13Z" stroke="#D44729" strokeWidth="22"/>
                             <path d="M249.904 258.496C249.904 275.008 246.064 286.72 238.384 293.632C230.896 300.544 218.416 304 200.944 304H141.616V102.4H197.488C214.768 102.4 227.824 105.952 236.656 113.056C245.488 119.968 249.904 131.392 249.904 147.328V258.496ZM224.848 144.736C224.848 138.4 222.928 133.408 219.088 129.76C215.248 125.92 210.16 124 203.824 124H166.672V282.4H203.536C210.832 282.4 216.208 280.768 219.664 277.504C223.12 274.048 224.848 268.672 224.848 261.376V144.736Z" fill="#D44729"/>
                         </svg>
                     </motion.a>
                     <nav className="nav"> 
                         <input id="ham-nav"type="checkbox"/>
                         <motion.label id="ham-nav-label" htmlFor="ham-nav"
-                        whileTap={{scale: 0.8, color: "#FFB612"}}>
-                            &#9776;
+                        whileTap={{scale: 0.8, color: "#f4bc46"}}>
+                            <BiMenuAltRight />
                         </motion.label>
                         <motion.div className="ham-nav-items"
                         style={{ x: -20, opacity: 0 }}

@@ -5,16 +5,16 @@ import './Home.scss';
 
 const pageVariants = { 
     in:{ 
-        scale: [0.95, 0.95, 0.95, 1],
-        x: ["100vw", "100vw", "0vw", "0vw"],
+        scale: [0.95, 0.95, 0.95, 0.95, 1],
+        x: ["100vw", "100vw", "100vw", "0vw", "0vw"],
     },
     notIn: {
         scale: 0.95,
         x: "100vw",
     },
     outDown: {
-        scale: [1, 0.95, 0.95],
-        y: [0, 0, 1000],
+        scale: [1, 0.95, 0.95, 0.95, 0.95],
+        y: [0, 0, 0, 0, 2000],
     }
 }
 
