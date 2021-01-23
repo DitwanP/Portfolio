@@ -93,6 +93,7 @@ body {
     justify-content: center;
     align-items: center;
     text-align: center;
+    overflow: visible;
 
     #ham-nav-label, #ham-nav {
         display: none;
@@ -201,6 +202,7 @@ body {
             width: 100%;
             border-top: 1px $white;
             padding: 0;
+            overflow: hidden;
         }
 
         #ham-nav:checked ~ .ham-nav-items { 
