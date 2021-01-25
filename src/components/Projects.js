@@ -201,7 +201,7 @@ class Projects extends Component {
                                     variants={container}
                                     transition={{ ease: "easeIn", duration: 0.25, delay: 2.9 }}>
                                         I created this site in order for a user to see a simple and clean
-                                        presentation of their spotify data. I utilized the Spotify API in order 
+                                        presentation of their Spotify data. I utilized the Spotify API in order 
                                         for users to login and authenticate externally, and then their most important
                                         account data is displayed to them.
                                     </motion.h3>
@@ -345,7 +345,7 @@ class Projects extends Component {
                                     This project was my first endeavor into the world of web development.
                                     The goal was to make a convincing online bookstore with full CRUD 
                                     functionality in the shopping cart. We used Django for the first time
-                                    and managed to create a solid project condsidering it was new to all members involved.
+                                    and managed to create a solid project considering it was new to all members involved.
                                 </motion.h3>
                                 <motion.ul className="tech-used"
                                 initial="start"
