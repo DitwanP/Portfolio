@@ -223,7 +223,7 @@ export default class Skils extends Component {
                         transition={{ ease: "easeIn", duration: 0.25, delay: 1.2 }}>
                             My main language of choice is Python for its simplicity. Django was my first 
                             experience with anything web related, then I discovered React and it 
-                            became my premier framework for front-end developement.I enjoy using React 
+                            became my premier framework for front-end developement. I enjoy using React 
                             along with a variety of other tools to create beautiful things that will live 
                             on the web.
                         </motion.p>
