@@ -223,17 +223,18 @@ export default class Skils extends Component {
                         transition={{ ease: "easeIn", duration: 0.25, delay: 1.2 }}>
                             My main language of choice is Python for its simplicity. Django was my first 
                             experience with anything web related, then I discovered React and it 
-                            became my premier framework for frontend developement.
+                            became my premier framework for front-end developement.I enjoy using React 
+                            along with a variety of other tools to create beautiful things that will live 
+                            on the web.
                         </motion.p>
                         <motion.p
                         initial="start"
                         animate="end" 
                         variants={textContainers}
                         transition={{ ease: "easeIn", duration: 0.25, delay: 1.3 }}>
-                            I enjoy using React and a wide variety of other tools to create things that will live on the web. 
-                            That being said I do not classify myself as an exclusively Frontend developer, since I've just graduated 
-                            and is still new to the world of developing I am very much open to learning both frontend and backend 
-                            tech in order to be a well-rounded engineer.
+                            That being said, I would not put myself in the box of exclusively front-end developer, because I've just recently graduated 
+                            and I'm still relatively new to the world of developing, I am open to learning both front-end and back-end 
+                            technologies to grow into a well-rounded engineer.
                         </motion.p>
                     </motion.div>
                     <motion.div className="list-of-skills"button

@@ -203,7 +203,7 @@ class Projects extends Component {
                                         I created this site in order for a user to see a simple and clean
                                         presentation of their Spotify data. I utilized the Spotify API in order 
                                         for users to login and authenticate externally, and then their most important
-                                        account data is displayed to them.
+                                        account data gets displayed to them.
                                     </motion.h3>
                                     <motion.ul className="tech-used"
                                     initial="start"
