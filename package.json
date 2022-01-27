@@ -39,7 +39,7 @@
     "react-tsparticles": "^1.18.5",
     "sendgrid": "^5.2.3",
     "serve": "^11.3.2",
-    "three": "^0.122.0",
+    "three": "^0.137.0",
     "typescript": "^2.9.2"
   },
   "engines": {
